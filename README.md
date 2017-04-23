@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -23,7 +22,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-=======
-# pattern-library
-Make knitting design patterns
->>>>>>> 9f6bfffac1844c4e11c979ee00f991cc3490862e
+
