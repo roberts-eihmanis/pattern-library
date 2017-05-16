@@ -28,7 +28,13 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 
 # Authentification
+gem 'activeadmin'
+
+# Plus integrations with:
 gem 'devise'
+gem 'cancan' # or cancancan
+gem 'draper'
+gem 'pundit'
 
 
 # Use jquery as the JavaScript library
