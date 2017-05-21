@@ -1,0 +1,16 @@
+lv:
+  devise:
+    failure:
+      user:
+        unauthenticated: Jūs neesat pieteicies sistēmai
+    sessions:
+      user:
+        signed_in: Jūs esat veiksmīgi pieteicies sistēmā
+    registrations:
+      user:
+        signed_up: Jūs esat veiksmīgi reģistrējies sistemā
+    omniauth_callbacks:
+      user:
+        succes: Jūs esat veiksmīgi pietecies ar facebook
+
+

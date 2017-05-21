@@ -27,14 +27,17 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# Authentification
-gem 'activeadmin'
-
 # Plus integrations with:
 gem 'devise'
 gem 'cancan' # or cancancan
 gem 'draper'
 gem 'pundit'
+
+# facebook authentication
+gem 'omniauth-facebook'
+
+# Environment variables
+gem 'figaro'
 
 
 # Use jquery as the JavaScript library

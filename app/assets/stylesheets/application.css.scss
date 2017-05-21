@@ -15,3 +15,43 @@
  */
 /* Custom bootstrap variables must be set or imported *before* bootstrap.*/
 @import "bootstrap";
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+.jumbotron {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.login_container {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+}
+
+footer {
+  margin-left: 10%;
+}
+
+.content_container{
+  background-color: white;
+}
+
+body {
+  background-image: asset-url("backg.jpg");
+}
+.devise-box {
+  font-family: MetaWebPro-Bold,sans-serif;
+  font-size: 14px;
+  padding-top: 180px;
+  padding-left: 460px;
+  width: 60%;
+  position: relative;
+  color: white;
+}
