@@ -15,7 +15,21 @@
  */
 /* Custom bootstrap variables must be set or imported *before* bootstrap.*/
 @import "bootstrap";
+button{
+  a{
+    color: white;
+  }
+}
 
+a:hover{
+  color:white;
+}
+
+
+.jumbotron{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
 a:link {
   text-decoration: none;
 }

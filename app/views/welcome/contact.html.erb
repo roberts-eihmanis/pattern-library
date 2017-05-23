@@ -1,41 +1,47 @@
-<legend>Kontakti</legend>
-<div class="newboxes" id="newboxes4">
-  
-<form method="get" action="index.html" id="regForm" >
+<div class="jumbotron">
+  <legend>Kontakti</legend>
+  <div class="newboxes" id="newboxes4">
+    
+  <form method="get" action="index.html" id="regForm" >
 
-  <p>Dažādiem piedāvājumiem, jautājumiem atsūtiet mums savu informāciju un mēs ar jums sazināsimies</p>
-      <dl>
-      <dt><label for="lstTitle">Uzruna</label></dt>
-      <dd>
-        <select id="lstTitle" name="lstTitle">
-          <option></option>
-          
-            <option>Mr.</option>
-            <option>Ms.</option>
-            <option>Mrs.</option>
-          
-        </select>
-      </dd>
-      <dt><label for="txtName">Vārds</label></dt>
-      <dd><input type="text" name="txtName" id="txtName" maxlength="8" /> * </dd>
+    <p>Dažādiem piedāvājumiem, jautājumiem atsūtiet mums savu informāciju un mēs ar jums sazināsimies</p>
+        <dl>
+        <dt><label for="lstTitle">Uzruna</label></dt>
+        <dd>
+          <select id="lstTitle" name="lstTitle">
+            <option></option>
+            
+              <option>Mr.</option>
+              <option>Ms.</option>
+              <option>Mrs.</option>
+            
+          </select>
+        </dd>
+        <dt><label for="txtName">Vārds</label></dt>
+        <dd><input type="text" name="txtName" id="txtName" maxlength="8" /> * </dd>
 
-      
-      <dt><label for="txtSurname">Uzvārds</label></dt>
-      <dd><input type="text" name="txtSurname" id="txtSurname" /> * </dd>
+        
+        <dt><label for="txtSurname">Uzvārds</label></dt>
+        <dd><input type="text" name="txtSurname" id="txtSurname" /> * </dd>
 
-      <dt><label for="txtemail">E-pasts</label></dt>
-      <dd><input type="text" name="txtemail" id="txtemail" /> * </dd>
+        <dt><label for="txtemail">E-pasts</label></dt>
+        <dd><input type="text" name="txtemail" id="txtemail" /> * </dd>
 
-      </dl>
-      <dl>
-      <dt><label for="txtPiezimes">Jautājumi/komentāri</label></dt>
+        </dl>
+        <dl>
+        <dt><label for="txtPiezimes">Jautājumi/komentāri</label></dt>
 
-      <dd>
-      <textarea name="txtPiezimes" id="txtPiezimes" rows="8" cols="30">
-      </textarea>
-      </dd>
-    </dl>       
-  <p> Ar * ir atzīmēti obligāti aizpildāmie lauki</p>
-  <p><input type="submit" value="Sūtīt" id="submit" /></p>
-</form>
+        <dd>
+        <textarea name="txtPiezimes" id="txtPiezimes" rows="8" cols="30">
+        </textarea>
+        </dd>
+      </dl>       
+    <p> Ar * ir atzīmēti obligāti aizpildāmie lauki</p>
+    <input type="submit" value="Sūtīt" id="submit" class="btn btn-primary"/>
+    <button class="btn btn-primary" type="button">
+      <a href=<%= root_path %>> Atpakaļ </a>
+    </button>
+
+  </form>
+  </div>
 </div>

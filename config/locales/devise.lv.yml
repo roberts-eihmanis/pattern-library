@@ -11,6 +11,6 @@ lv:
         signed_up: Jūs esat veiksmīgi reģistrējies sistemā
     omniauth_callbacks:
       user:
-        succes: Jūs esat veiksmīgi pietecies ar facebook
+        success: Jūs esat veiksmīgi pietecies ar facebook
 
 
