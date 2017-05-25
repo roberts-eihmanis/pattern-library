@@ -1,0 +1,74 @@
+<script>
+  $(document).ready(function(){
+    $('.video_popup').addClass('hide')
+    $('.instruction_popup').addClass('hide')
+    $('.legend_popup').addClass('hide')
+    $('.link_popup').addClass('hide')
+  });
+  function openVideos(){
+    $('.video_popup').removeClass('hide')
+  };
+  function openInstruction(){
+    $('.instruction_popup').removeClass('hide')
+  };
+  function openLegend(){
+    $('.legend_popup').removeClass('hide')
+  };
+  function openLinks(){
+    $('.link_popup').removeClass('hide')
+  };
+  
+</script>
+<div class="popup_container video_popup">
+  <%= render :partial => "video_photo_show" %>
+</div>
+<div class="popup_container instruction_popup">
+  <%= render :partial => "instructions" %>
+</div>
+<div class="popup_container legend_popup">
+  <%= render :partial => "legend" %>
+</div>
+<div class="popup_container link_popup">
+  <%= render :partial => "links" %>
+</div>
+<div class="jumbotron">
+  <h1>Padomi</h1>
+
+
+  <table class="table">
+    <tr>
+      <td>
+        <h4>Kā pareizāk izmērīt nepieciešamos valdziņus cimdam</h4>
+        <p>
+          Instrukcija, kā izmērīt un aprēķināt valdziņu skaitu cimdam,
+          ko vēlaties uzadīt
+          <button class="btn btn-primary" data-action="open_videos" onclick="openInstruction()">Vairāk</button>
+        </p>
+      </td>
+      <td>
+        <h4>Valdziņu tehniskie apzīmējumi</h4>
+        <p>
+          Informācija par biežāk izmantotajiem
+          valdziņu apzīmējumiem
+          <button class="btn btn-primary" data-action="open_videos" onclick="openLegend()">Vairāk</button>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4>Video un Foto</h4>
+        <p>
+          Dažādi ar adīšanu saistīti video un foto
+          <button class="btn btn-primary" data-action="open_videos" onclick="openVideos()">Vairāk</button>
+        </p>
+      </td>
+      <td>
+        <h4>Saites</h4>
+        <p>
+          Dažādas ar adīšanu noderīgas saites
+          <button class="btn btn-primary" data-action="open_videos" onclick="openLinks()">Vairāk</button>
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>

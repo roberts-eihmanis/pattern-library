@@ -8,13 +8,36 @@
     </li>
   </ul>
 
-  <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane fade in active show" id="users">
-      <h1>Lietotāji</h1>
+      <a class="btn btn-primary" style="margin-top:10px;" href=<%= new_user_path %>>Jauns Lietotājs</a>
+      <h1 style="margin-top: 10px;">Lietotāji</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Vārds</th>
+            <th>Uzvārds</th>
+            <th>Lietotājvārds</th>
+            <th>Epasts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.surname %></td>
+              <td><%= user.user_name %></td>
+              <td><%= user.email %></td>
+              <td style="width:200px;"><a class="btn btn-primary" href=<%= edit_user_path(user) %>>Rediģēt</a>
+              <%= link_to "Dzēst", user, method: :delete,
+                data: { confirm: "You sure?" }, class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
     <div role="tabpanel" class="tab-pane fade" id="patterns">
-      
+      <%= render file: "patterns/index" %>
     </div>
   </div>
 </div>

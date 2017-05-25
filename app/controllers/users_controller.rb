@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @patterns = Pattern.all
     respond_to do |format|
       format.html
       format.json { render json: @users }
@@ -64,6 +65,6 @@ class UsersController < ApplicationController
   end
 
   def secure_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :phone_number, :role)
+    params.require(:user).permit(:name, :surname, :user_name, :email, :password, :description, :role)
   end
 end

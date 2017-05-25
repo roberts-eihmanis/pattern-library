@@ -1,0 +1,29 @@
+<%= form_for @user, html: { class: 'form-horizontal' } do |f| %>
+  <div class="field">
+    <%= f.label "Vārds" %><br />
+    <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: 'Vārds' %>
+  </div>
+  <div class="field">
+    <%= f.label "Uzvārds" %><br />
+    <%= f.text_field :surname, autofocus: true, class: "form-control", placeholder: 'Uzvārds' %>
+  </div>
+  <div class="field">
+    <%= f.label "Lietotājvārds" %><br />
+    <%= f.text_field :user_name, autofocus: true, class: "form-control", placeholder: 'Lietotājvārds' %>
+  </div>
+  <div class="field">
+    <%= f.label "epasts" %><br />
+    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: 'Epasts' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "parole" %><br />
+    <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: 'Parole' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Saglabāt", class: 'btn btn-primary' %>
+    <a href="/admin/users">Atpakaļ</a>
+  </div>
+<% end %>
+

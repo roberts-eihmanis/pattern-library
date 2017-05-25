@@ -8,8 +8,15 @@ Rails.application.routes.draw do
   resources :welcome do
     collection do
       get 'about'
-      get 'contact'
+      get 'advise'
     end
   end
+  resources :patterns do
+    collection do
+      get 'new_from_img'
+    end
+  end
+  resources :messages
+  resources :colors
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

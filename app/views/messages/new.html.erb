@@ -1,0 +1,38 @@
+<div class="jumbotron">
+  <legend>Kontakti</legend>
+  <p>Dažādiem piedāvājumiem, jautājumiem atsūtiet mums savu informāciju un mēs ar jums sazināsimies</p>
+  <%= form_for @message, html: { class: 'form-horizontal' } do |f| %>
+    <div class="field">
+      <%= f.label "Uzruna" %>
+      <%= f.select(:id, @titles, {}, class: 'form-control small_input') %>
+    </div>
+   
+    <div class="field">
+      <%= f.label "Vārds" %><br />
+      <%= f.text_field :name, autofocus: true, class: "form-control small_input", placeholder: 'Vārds' %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Uzvārds" %><br />
+      <%= f.text_field :surname, autofocus: true, class: "form-control small_input", placeholder: 'Uzvārds' %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Epasts" %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control small_input", placeholder: 'Epasts' %>
+    </div>
+
+    <div class="field">
+      <%= f.label "Jautājumi/Komentāri" %><br />
+      <%= f.text_area :text, autofocus: true, class: "form-control" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Saglabāt", class: 'btn btn-primary' %>
+      <a href="/">Atpakaļ</a>
+    </div>
+
+    <p> Ar * ir atzīmēti obligāti aizpildāmie lauki</p>
+  <% end %>
+
+</div>
