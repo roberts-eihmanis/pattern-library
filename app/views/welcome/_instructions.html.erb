@@ -1,4 +1,60 @@
+<script type="text/javascript">
+  function calculate() {
+    var hand;
+    var row;
+    hand = $('select#hand').val();
+    row = $('select#pattern-row').val();
+    var sum = hand * row;
+    var temp = 1;
+    for(var i = 1; i < 4; i++){
+      if(sum % 4 === 0) {
+        sum = sum;
+      } else {
+        sum = sum + temp;
+      }
+    }
+    var one = sum/4;
+    var rowSum = "<b>Jūsu kopējais valdziņu skaits ir " + sum + "</b>"; 
+    var oneRow = "<b>Jūsu valdziņu skaits uz vienas adatas ir " + one + "</b>";
+    $('.instruction_popup').html('<div class="content_container"><div id="rowSum"></div><div id="oneRow"></div><a href="/welcome/advise">Aizvērt</a></div>');
+    document.getElementById("rowSum").innerHTML = rowSum;
+    document.getElementById("oneRow").innerHTML = oneRow;
+
+  };
+</script>
 <div class="content_container">
-  <h1>Instrukcijas!!!</h1>
-  <a href="/welcome/advise">Aizvērt</a>
+  <legend>Instrukcijas kā izmērīt nepieciešamos valdziņus cimdam</legend>
+  <p><i>
+    1. Vispirms jāuzada paraudziņš apmeram 10x10cm, lai noteiktu, cik 1 cm ir valdziņi. Paraudziņu
+    adām ar tām adatām un ar to dziju ar ko ir paredzēts adīt cimdu. (Brīdinājums: Ja izvēlēsieties paraudziņam citu dziju un citas adatas, tad būs neatbilstošs izmērs)
+  </i></p>
+  <p><i>
+    2. Izmēram paraudziņu ar mērinstrumentu, nosakot cik 1 cm ir valdziņu. <b>Piemēram: 1 cm = 4 valdziņi</b>
+  </i></p>
+  <p><i>
+    3. Mēram roku. Parasti delnu mēra platākajā vietā kā parādīts zīmējumā: <b>Zīmējums</b>
+    <b>Piemēram, delnas apkārtmērs 15cm</b>
+  </i></p>
+  <form class="form-horizontal" onsubmit="return false;">
+    <div class="form-group">
+      <label for="hand">Rokas Apkārtmērs</label>
+      <select class="form-control" id="hand">
+        <%= for i in (10..25) do %>
+          <option><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="pattern-row">Valdziņi 1 cm</label>
+      <select class="form-control" id="pattern-row">
+        <%= for i in (1..4) do %>
+          <option><%= i %></option>
+        <% end %>
+      </select>
+    </div>
+    <div class="actions">
+      <button class="btn btn-secondary calculate" onclick="calculate()">Rēķināt</button>
+      <a href="/welcome/advise">Aizvērt</a>
+    </div>
+  </form>
 </div>

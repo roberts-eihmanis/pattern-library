@@ -1,5 +1,24 @@
-<div class="tab_container">
-  <a class="btn btn-primary btn-lg" href=<%= new_from_img_patterns_path %>>Jauns raports no attēla</a>
-  <a class="btn btn-primary btn-lg" href=<%= new_pattern_path %>>Jauns raports</a>
+<div class="jumbotron">
+  <h1>Raportu meklēšana</h1>
+  <%= form_tag patterns_path, :method => 'get' do %>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Valdziņu skaits</label>
+      <div class="col-10">
+        <%= select_tag "Valdziņu skaits", options_for_select((1..50)), class: 'form-control select_input', id: 'row_input' %>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Krāsu skaits</label>
+      <div class="col-10">
+        <%= select_tag "Krāsu skaits", options_for_select((1..10)), class: 'form-control select_input', id: 'row_input' %>
+      </div>
+    </div>
+    <div class="actions">
+      <%= submit_tag "Meklēt", :name => nil, class: 'btn btn-primary' %>
+      <a href="/admin/users">Atpakaļ</a>
+    </div>
+  <% end %>
 </div>
-
+<div class="jumbotron">
+  <h1>Raporti</h1>
+</div>

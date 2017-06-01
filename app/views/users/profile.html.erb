@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <h1> <%= str = if @user.name then "#{@user.name} #{@user.surname}" else "#{@user.email}" end %> </h1>
+  <table class="table">
+    <tr>
+      <td>Lietotājvārds</td>
+      <td><%= @user.user_name %></td>
+    </tr>
+    <tr>
+      <td>Epasts</td>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <td>Jūs pievienojāties:</td>
+      <td><%= @user.created_at.to_date %></td>
+    </tr>
+    <tr>
+      <td>Par jums</td>
+      <td><%= @user.description %></td>
+    </tr>
+  </table>
+</div>
