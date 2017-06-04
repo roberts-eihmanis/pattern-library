@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # Atļaut tika adminam piekļūt pie Datiem, izņemot lietotājs var redzēt savu profilu
   before_action :admin_only, except: [:show, :profile]
 
-  # Visi lietotāju atlasīšanas funkcija
+  # Visu lietotāju atlasīšanas funkcija
   def index
     @users = User.all
     @patterns = Pattern.all
@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # Konkrētā lietotāju atlasīšanas funkcija
+  # Konkrētā lietotāja atlasīšanas funkcija
   def show
     @user = User.find(params[:id])
     unless current_user.admin?
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  # Lietotāja jauna izveidošanas funckija
+  # Jauna lietotāja izveidošanas funckija
   def new
     @roles = ['admin', 'user', 'worker']
     @user = User.new
@@ -74,7 +74,7 @@ class UsersController < ApplicationController
     end
   end
 
-  # Atļaujam tikai konkrētos parametrus padot datubāzei un atjaunot datus vai izveidot no jauna
+  # Atļaujam tikai konkrētos parametrus nodot datubāzei un atjaunot datus, vai izveidot no jauna
   def secure_params
     params.require(:user).permit(:name, :surname, :user_name, :email, :password, :description, :role)
   end

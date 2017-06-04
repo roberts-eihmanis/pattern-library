@@ -23,7 +23,7 @@ button{
 
 
 a:hover{
-  color:white;
+  text-decoration: none;
 }
 
 .tab_container{
@@ -106,7 +106,7 @@ footer {
 }
 
 body {
-  background-image: asset-url("backg.jpg");
+  background-image: asset-url("backg2.jpg");
 }
 .devise-box {
   font-family: MetaWebPro-Bold,sans-serif;
@@ -116,4 +116,8 @@ body {
   width: 60%;
   position: relative;
   color: white;
+}
+img:hover {
+  -webkit-transform:scale(2.0);
+  transform:scale(2.0);
 }
