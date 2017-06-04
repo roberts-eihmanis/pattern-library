@@ -3,6 +3,7 @@ lv:
     failure:
       user:
         unauthenticated: Jūs neesat pieteicies sistēmai
+        invalid: Jūs ievadījāt nepareizu paroli
     sessions:
       user:
         signed_in: Jūs esat veiksmīgi pieteicies sistēmā
@@ -12,5 +13,3 @@ lv:
     omniauth_callbacks:
       user:
         success: Jūs esat veiksmīgi pietecies ar facebook
-
-

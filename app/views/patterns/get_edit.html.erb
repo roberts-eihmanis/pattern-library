@@ -1,0 +1,87 @@
+<html>
+  <head>
+    <title>Pattern</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"/>
+    <script defer="" src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+      /* svg css */
+      /* Grid line color */
+      .axis line {fill: none;stroke: #d00;shape-rendering: crispEdges;vector-effect: non-scaling-stroke;}
+      /* make the Element stretch to fill the screen in WebKit */
+      :-webkit-full-screen svg {width: 100%;height: 100%;}
+      #pattern { z-index: 1;}
+      #toolset {
+          position: absolute;
+          z-index: 3;
+          top: 0;
+          height: 100vh;
+          width: 300px;
+          background-color: #efefef;
+          box-shadow: 0 0 0 0 #3f3f3f;
+          right: 0;
+        /*  transform: translateX(-400px);
+          transition: transform 0.5s ease-in-out; */
+      }
+      .base {
+          display: 'none'
+      }
+      .objects {
+          display: 'pattern'
+      }
+      svg { z-index: 2;}
+    </style>
+  </head>
+</html>
+<body>
+  <div id="bg1"></div>
+  <main class="mdl-layout mdl-js-layout">
+    
+    <div id="dialog">
+      <dialog id="colPick" class="mdl-dialog">
+        <p class="mdl-dialog__title">Color picker</p>
+        <div class="mdl-dialog__actions"></div>
+        <button type="button" id="colPickClose" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Close</button>
+      </dialog>
+    </div>
+    <div class="mdl-layout__content">
+      <div id="toolset">
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label for="column-boxes" class="mdl-textfield__label">Active Layer:</label>
+            <input name="column-boxes" type="text" value="Base layer" class="mdl-textfield__input column-boxes"/><span class="mdl-textfield__error">Something...!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <label for="row-boxes" class="mdl-textfield__label">Name/ID:</label>
+            <input type="text" value="" id="filename" class="mdl-textfield__input row-boxes"/><span class="mdl-textfield__error">Something ....!</span>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <select id="propertyType" form="addProperty" name="propertyType" class="select form-control input-lg">
+              <option value="1">Base</option>
+              <option value="3">Pattern</option>
+              <!--option(value='6') Pedestrian-->
+              <!--option(value='7') Car-->
+              <!--option(value='10') Signs-->
+              <!--option(value='11') Traffic Lights-->
+              <!-- sample layers - not defined by any means-->
+            </select>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <button type="button" id="color-btn" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Color Picker</button>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <div id="activeColor">
+              <h4>Brush color</h4>
+            </div>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <button type="button" id="saveEditedImage" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Save Pattern</button>
+          </div>
+        </form>
+      </div>
+      <div id="pattern"></div>
+    </div>
+  </main>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://d3js.org/d3.v3.js"></script>
+</body>

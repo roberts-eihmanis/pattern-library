@@ -22,9 +22,11 @@
               <li class="nav-item">
                 <a class="navbar-brand" href="/messages/new">Kontakti</a>
               </li>
-              <li class="nav-item">
-                <a class="navbar-brand" href="/admin/users">Administratora panelis</a>
-              </li>
+              <% if current_user.admin? %>
+                <li class="nav-item">
+                  <a class="navbar-brand" href="/admin/users">Administratora panelis</a>
+                </li>
+              <% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item">

@@ -20,7 +20,25 @@ button{
     color: white;
   }
 }
+/* layout.css Style */
+.upload-drop-zone {
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px;
+}
 
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center
+}
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222;
+}
 
 a:hover{
   color:white;
@@ -91,6 +109,18 @@ a:visited {
   margin-left: 20%;
   margin-right: 20%;
   margin-top: 5%;
+}
+
+#bg1 {
+  position: fixed;
+  z-index: -999;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center center;
+  background-image: asset-url('img_yarn.jpg');
 }
 
 footer {

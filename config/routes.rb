@@ -19,7 +19,13 @@ Rails.application.routes.draw do
   end
   resources :patterns do
     collection do
-      get 'new_from_img'
+      post 'uploadfile'
+      get 'getfilename'
+      post 'uploadrectarray'
+      post 'getediturl'
+      post 'getrectarray'
+      get 'getrectarray'
+      get 'getediturl', action: :get_edit
     end
   end
   resources :messages
