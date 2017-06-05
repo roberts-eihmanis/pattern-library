@@ -1,12 +1,6 @@
-<script>
-  $(document).ready(function(){
-    $('.video_popup').addClass('hide')
-    $('.instruction_popup').addClass('hide')
-    $('.legend_popup').addClass('hide')
-    $('.link_popup').addClass('hide')
-  });
+<script type="text/javascript">
   function openVideos(){
-    $('.video_popup').removeClass('hide')
+    $('.video_popup').show()
   };
   function openInstruction(){
     $('.instruction_popup').removeClass('hide')
@@ -19,16 +13,16 @@
   };
   
 </script>
-<div class="popup_container video_popup">
+<div class="popup_container video_popup hide">
   <%= render :partial => "video_photo_show" %>
 </div>
-<div class="popup_container instruction_popup">
+<div class="popup_container instruction_popup hide">
   <%= render :partial => "instructions" %>
 </div>
-<div class="popup_container legend_popup">
+<div class="popup_container legend_popup hide">
   <%= render :partial => "legend" %>
 </div>
-<div class="popup_container link_popup">
+<div class="popup_container link_popup hide">
   <%= render :partial => "links" %>
 </div>
 <div class="jumbotron">

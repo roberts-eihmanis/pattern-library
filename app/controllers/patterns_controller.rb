@@ -1,6 +1,7 @@
 class PatternsController < ApplicationController
-  before_action :load_pattern, only: [:getrectarray, :getediturl]
-  skip_before_filter :verify_authenticity_token
+  before_action :load_pattern, only: [:getrectarray, :getediturl, :getfilename]
+  before_action :new_pattern, only: [:uploadfile, :uploadrectarray]
+  skip_before_action :verify_authenticity_token
 
   def index
     @patterns = Pattern.all
@@ -11,14 +12,20 @@ class PatternsController < ApplicationController
   end
 
   def uploadfile
+    uploaded_io = params[:file]
+    @file = params[:file]
+    File.open(Rails.root.join('public', 'uploads', "#{uploaded_io.original_filename}_#{rand(1..10000)}"), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
   end
 
   def getfilename
-    
+    respond_to do |format|
+      format.json { render json: @last_pattern }
+    end
   end
 
   def uploadrectarray
-    @upload_pattern = Pattern.new
     @upload_pattern.row_number = params[:array][:row_number]
     @upload_pattern.col_number = params[:array][:col_number]
     @upload_pattern.pattern_img = params[:array].to_json.to_s
@@ -64,6 +71,10 @@ class PatternsController < ApplicationController
   end
 
   private
+
+  def new_pattern
+    @upload_pattern = Pattern.new
+  end
 
   def load_pattern
     @last_pattern = Pattern.last

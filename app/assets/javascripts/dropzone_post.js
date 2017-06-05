@@ -72,19 +72,20 @@ $(function () {
                 contentType: false,
                 processData: false,
                 success: function (data) {
+                    $.ajax({
+                        url: "/patterns/uploadrectarray",
+                        type: "post",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        data: JSON.stringify({"array": resultArray}),
+                        success: function (response) {
+                            console.log("sent array!");
+                        } //function
+                    }); // $.ajax
                     console.log('uploaded cropped image');
                 } // function
             }); // $.ajax
-            $.ajax({
-                url: "/patterns/uploadrectarray",
-                type: "post",
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                data: JSON.stringify({"array": resultArray}),
-                success: function (response) {
-                    console.log("sent array!");
-                } //function
-            }); // $.ajax
+            
             $.ajax({
                 url: "/patterns/getediturl",
                 type: "post",

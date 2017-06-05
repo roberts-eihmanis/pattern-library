@@ -24,8 +24,9 @@ window.addEventListener('DOMContentLoaded', function () {
             $.ajax({
                 url: "/patterns/getfilename",
                 type: "get",
+                dataType: 'json',
                 success: function(response) {
-                    imagedir = '/'+response.file;
+                    imagedir = '/'+ response.file;
                     console.log("image dir passed to me: " + imagedir);
                     console.log("imagedata: " + JSON.stringify(rectarray.imagedata));
 
